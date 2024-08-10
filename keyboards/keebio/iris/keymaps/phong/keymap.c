@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *             |--|62|--|    |--|28|--|
  *************************************************************/
 bool rgb_matrix_indicators_kb(void) {
-    if (!rgb_matrix_indicators_user()) {
+    if (!rgb_matrix_indicators_user()) {        
         return false;
     }
 
@@ -112,6 +112,34 @@ bool rgb_matrix_indicators_kb(void) {
     }
     return true;
 }
+
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//    switch (get_highest_layer(state)) {
+//    case _GAME:
+//       rgblight_sethsv_at(0, HSV_GREEN);
+//       rgblight_sethsv_at(17, HSV_GREEN); // G
+//       rgblight_sethsv_at(13, HSV_GREEN); // A
+//       rgblight_sethsv_at(53, HSV_GREEN); // M
+//       rgblight_sethsv_at(8, HSV_GREEN); // E
+//       break;
+//    case _OSX:
+//       rgblight_sethsv_at(0, HSV_WHITE);
+//       rgblight_sethsv_at(43, HSV_WHITE); // O
+//       rgblight_sethsv_at(14, HSV_WHITE); // S
+//       rgblight_sethsv_at(21, HSV_WHITE); // X
+//       break;
+//    case _FN:
+//       rgblight_sethsv_at(0, HSV_CHARTREUSE);
+//       rgblight_sethsv_at(16, HSV_CHARTREUSE); // F
+//       rgblight_sethsv_at(52, HSV_CHARTREUSE); // N
+//       break;
+//    default: //  for any other layers, or the default layer
+//       rgblight_sethsv_at(0, HSV_PURPLE);
+//       break;
+//    }
+//    rgblight_set_effect_range( 1, 4);
+//    return state;
+// }
 
 #if defined(ENCODER_MAP_ENABLE)
    const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
